@@ -18,7 +18,7 @@ import {
   deletelikedvideo,
 } from "../Controllers/LikedVideo.js";
 import upload from "../Helper/filehelper.js";
-import auth from "../middleware/auth.js";
+import auth from "../Middleware/Auth.js";
 
 const routes = express.Router();
 
