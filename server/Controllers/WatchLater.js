@@ -1,4 +1,4 @@
-import watchlater from "../Models/watchlater.js";
+import watchlater from "../Models/WatchLater.js";
 
 export const watchlatercontroller = async (req, res) => {
   const watchlaterdata = req.body;
