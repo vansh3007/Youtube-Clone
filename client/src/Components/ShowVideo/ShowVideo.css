@@ -1,0 +1,38 @@
+.showVideo{
+ cursor: pointer;
+    margin: 0;
+    width: calc(100% - 1rem);
+    color: white;
+
+}
+
+.showVideo video{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.videoDiscription{
+    margin-top: 1rem;
+    color: rgb(177, 176, 176);
+}
+.videoDiscription p,pre{
+    margin: 0;
+}
+.videoBox{
+    display: flex;
+    align-items: center;
+    font-size: medium;
+    gap:1rem;
+}
+
+.videoTitle{
+    font-weight: 500;
+    font-size: large !important;
+    color: white !important;
+}
+
+.showVideoNavLink{
+    text-decoration: none;
+    
+}

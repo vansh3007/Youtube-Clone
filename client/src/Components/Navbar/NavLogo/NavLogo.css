@@ -1,0 +1,23 @@
+.navLogoContainer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    background-color: rgb(11, 11, 11);
+    height: inherit;
+}
+.navToggle{
+    font-size:1.5rem;
+    margin-left: 2rem;
+}
+
+.navLogo img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.navLogo{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+}

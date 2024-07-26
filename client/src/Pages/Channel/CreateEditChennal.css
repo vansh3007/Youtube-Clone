@@ -1,0 +1,69 @@
+.CreateEditChennal{
+    background-color: rgba(0, 0, 0, 0.697);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+}
+.CreateEditChennal2{
+    margin: auto;
+    background-color: rgba(55,57,67,0.293);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 20rem;
+    height: 30rem;
+    padding: 0.8rem;
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px white,-2px 2px white;
+    gap:1rem;
+}
+.CreateEditChennal2 h2{
+    text-decoration: underline;
+    color: whitesmoke;
+    text-align: center;
+}
+.CreateEditChennal2 input,
+.CreateEditChennal2 textarea
+{
+    color: blue;
+    resize: none;
+    padding: 0.3rem;
+    border: 2px solid rgb(137,243,250);
+}
+.CreateEditChennal2 button,
+.CreateEditChennal2 textarea{
+    font-size: 1rem;
+    padding: 0.2rem;
+    background-color: transparent;
+    color: aliceblue;
+    border-radius: 0.2rem;
+    margin: 0.2rem;
+    font-weight: bold;
+}
+.CreateEditChennal2 button{
+    background-color: rgb(28, 28, 28);
+    transition: 2s all ;
+}
+.CreateEditChennal2 button:hover{
+    color: orange;
+    background-color: black;
+}
+.xInput{
+    border: 0;
+    padding: 0;
+    color: white;
+    background-color: transparent;
+    font-size: 5rem;
+    right: 50px;
+    cursor: pointer;
+    position: absolute;
+transition: 1s color;
+}
+
+.xInput:hover{
+    color: orange;
+}

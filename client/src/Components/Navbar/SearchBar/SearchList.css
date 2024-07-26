@@ -1,0 +1,23 @@
+.searchListContainer{
+    padding: 0.5rem;
+    font-weight: 300;
+    position: absolute;
+    top:3.5rem;
+    width: 45%;
+    height: fit-content;
+    color: white;
+    background-color:rgb(40, 38, 38);
+    z-index: 91;
+    border-radius: 1rem;
+}
+
+.TitleItem{
+    margin: 0%;
+    padding: 0.5rem;
+cursor: pointer;
+width: 100%;
+}
+.TitleItem:hover{
+    width: 97%;
+    background-color:rgb(64, 63, 63);
+}
