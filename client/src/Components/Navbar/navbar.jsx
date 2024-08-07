@@ -24,8 +24,17 @@ const CurrUser = useSelector((state) => state.currentuserreducer);
         // console.log(profile.email);
       }
   };
+
+// if (CurrUser) {
+//   reloader = false;
+//   console.log(user);
+// window.location.reload();
+// }
+
   const google_login = useGoogleLogin({
-    onSuccess: (tokenResponse) => setUser(tokenResponse),
+    onSuccess: (tokenResponse) => {
+      setUser(tokenResponse);
+    },
     onError: (error) => console.log("Login Failed", error),
   });
 
@@ -90,6 +99,7 @@ const CurrUser = useSelector((state) => state.currentuserreducer);
                     : CurrUser.result.email.charAt(0).toUpperCase()}
                 </p>
               </div>
+              
             ) : (
               <div className="profile" onClick={() => google_login()}>
                 <i className="fa-solid fa-user"></i>

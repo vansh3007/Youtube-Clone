@@ -41,3 +41,17 @@ export const login = async (req, res) => {
     return;
   }
 };
+
+
+
+export const fetchUserProfile = async (req,res)=> {
+  const { id: userId } = req.params;
+  
+ try {
+   const profileData = await users.findById(userId);
+   res.status(200).send(profileData);
+ } catch (error) {
+   res.status(404).json(error.message);
+   return;
+ }
+}

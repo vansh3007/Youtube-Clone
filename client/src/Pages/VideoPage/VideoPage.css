@@ -12,6 +12,16 @@
     display: flex;
     
 }
+#notification {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* background: rgba(0, 0, 0, 0.7); */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: none;
+  }
 
 .innerVideoPageContainer{
     /* margin: 1.5rem 4.5rem; */

@@ -7,7 +7,7 @@ function ShowVideo({ vi }) {
     <NavLink to={`/videopage/${vi?._id}`} className="showVideoNavLink">
       <div className="showVideo">
         <video
-          src={`http://localhost:5000/${vi?.filepath}`}
+          src={` https://youtube-clone-tvym.onrender.com/${vi?.filepath}`}
           className="videoBox"
         ></video>
         <div className="videoBox">

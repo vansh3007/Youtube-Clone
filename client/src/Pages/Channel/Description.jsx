@@ -16,15 +16,15 @@ function Description({
   if (!currChennel || !currUser || !currUser.result) {
     return <div>Loading...</div>;
   }
-  return ( 
+  return (
     <div className="chennelDescription">
       <div className="chanel_logo_chanel">
         <b>{currUser.result.name.charAt(0).toUpperCase()}</b>
       </div>
-      {/* {console.log(currChennel)} */}
       <div className="description_chanel">
         <b>{currChennel[0].name}</b>
         <p>{currChennel[0].desc}</p>
+        {/* <p>{currChennel[0].points}</p> */}
       </div>
       {currUser.result._id === currChennel[0]._id && (
         <>

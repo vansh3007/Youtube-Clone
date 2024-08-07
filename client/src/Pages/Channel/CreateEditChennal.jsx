@@ -18,7 +18,6 @@ function CreateEditChennal({ seteditcreatechanelbtn }) {
     alert("Enter your description")
     }
     else {
-     
       dispatch(
         updatechaneldata(currUser?.result._id, { name: name, desc: desc })
       );

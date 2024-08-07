@@ -5,8 +5,15 @@ const chanelreducer = (states = [], action) => {
         state._id === action.payload._id ? action.payload : state
       );
     case "FETCH_CHANELS":
-
       return action.payload;
+
+    case "UPDATE_POINTS_DATA":
+      return states.map((state) =>
+        state._id === action.payload._id ? action.payload : state
+      );
+
+    
+
     default:
       return states;
   }

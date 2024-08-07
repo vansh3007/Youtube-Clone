@@ -17,3 +17,13 @@ export const updatechaneldata = (id, updatedata) => async (dispatch) => {
     console.log(error);
   }
 };
+
+export const updatepointsdata = (id) => async (dispatch) => {
+  console.log(id);
+  try {
+    const { data } = await api.updatepointsdata(id);
+    dispatch({ type: "UPDATE_POINTS_DATA", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};

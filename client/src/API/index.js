@@ -1,6 +1,6 @@
 import axios from "axios";
 const API = axios.create({
-  baseURL: `https://youtube-clone-tvym.onrender.com`,
+  baseURL: ` https://youtube-clone-tvym.onrender.com/`,
 });
 
 
@@ -14,10 +14,12 @@ API.interceptors.request.use((req) => {
 });
 
 export const login = (authData) => API.post("/user/login", authData);
+export const fetchUserProfile = (id) => API.get(`/user/fetchUserProfile/${id}`);
 export const updatechaneldata = (id, updatedata) =>
   API.patch(`/user/update/${id}`, updatedata);
+export const updatepointsdata = (id) => API.patch(`/user/pointUpdate/${id}`);
 export const fetchallchannel = () => API.get("/user/getallchannel");
-
+ 
 export const uploadvideo = (filedata, fileoption) =>
   API.post("/video/uploadvideo", filedata, fileoption);
 export const getvideos = () => API.get("/video/getvideos");

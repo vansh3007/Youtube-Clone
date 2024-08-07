@@ -15,5 +15,9 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  points: {
+    type: Number,
+    default:0
+  }
 });
 export default mongoose.model("users", userSchema);

@@ -7,6 +7,7 @@ import commentreducer from "./Comment";
 import historyreducer from "./History";
 import likedvideoreducer from "./LikedVideo";
 import watchlaterreducer from "./WatchLater";
+import profilereducer from "./Profile";
 
 export default combineReducers({
   authReducer,
@@ -16,5 +17,6 @@ export default combineReducers({
   commentreducer,
   historyreducer,
   likedvideoreducer,
-  watchlaterreducer
+  watchlaterreducer,
+  profilereducer,
 });
