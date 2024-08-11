@@ -11,6 +11,7 @@ function Auth({ user, setAuthBtn, seteditcreatechanelbtn }) {
     dispatch(setcurrentuser(null));
     localStorage.clear();
     googleLogout();
+    window.location.reload();
     
   };
   return (

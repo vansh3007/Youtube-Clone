@@ -8,12 +8,15 @@ import { addtohistory } from "../../Action/History.js";
 import { setcurrentuser } from "../../Action/CurrUser.js";
 import { updatepointsdata } from "../../Action/ChennelUser.js";
 import { useNavigate } from "react-router-dom";
+import LikeShareDownbtn from "./LikeShareDownbtn.jsx";
 
 function VideoPage({ toggleDrawer, toggleSideDrawerBar }) {
   const { _id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const currUser = useSelector((state) => state.currentuserreducer);
+
+  let currUserId = currUser?.result?._id;
 
   const vid = useSelector((state) => state.videoreducer);
   const vi = vid?.data?.find((q) => q._id === _id);
@@ -29,6 +32,35 @@ function VideoPage({ toggleDrawer, toggleSideDrawerBar }) {
   let tapCount = 0;
   let tapTimeout;
   let longPressTimeout;
+
+   const showLocation = () => {
+    navigator.geolocation.getCurrentPosition(
+      (position) =>
+        getLocation(position.coords.latitude, position.coords.longitude),
+      (err) => console.log(err)
+    );
+  };
+
+  const getLocation = (latitude, longitude) => {
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=b70d50f1c50d9320cbadedaa6b97872f`;
+
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => showNotification(data.name, data.main.temp - 273))
+      .catch((error) => console.error("Fetch error:", error));
+  };
+
+  const showNotification = (name, temp) => {
+    const message = `Location: ${name}, Temperature: ${temp}`;
+    // notificationRef.current.textContent = message;
+    // notificationRef.current.style.display = "block";
+    alert(message);
+    // setTimeout(() => {
+      
+    // }, 3000);
+  };
+
+
 
   useEffect(() => {
     if (currentuser) {
@@ -87,7 +119,7 @@ function VideoPage({ toggleDrawer, toggleSideDrawerBar }) {
     ) {
       for (let i = 0; i < vid?.data?.length; i++) {
         if (vid?.data[i]._id === vi._id) {
-          let vidId = vid?.data[i - 1]?._id;
+          let vidId = vid?.data[i + 1]?._id;
           if (vidId) {
             navigate(`/videopage/${vidId}`);
             document.exitFullscreen();
@@ -223,8 +255,12 @@ function VideoPage({ toggleDrawer, toggleSideDrawerBar }) {
     video.addEventListener("ended", () => {
       video.playbackRate = 1;
       setIsPlaying(false);
-      dispatch(updatepointsdata(currUser?.result._id));
-      window.location.reload();
+        dispatch(updatepointsdata(currUserId));
+      
+      setTimeout(() => {
+        window.location.reload();
+      },1000)
+      
     });
 
     return () => {
@@ -264,6 +300,9 @@ function VideoPage({ toggleDrawer, toggleSideDrawerBar }) {
                 </p>
                 <p className="subscibeBtn">Subscribe</p>
               </div>
+            </div>
+            <div className="likesharebtn">
+              <LikeShareDownbtn vv={vi} vid={vi?._id}/>
             </div>
           </div>
           <hr />

@@ -25,15 +25,10 @@ const CurrUser = useSelector((state) => state.currentuserreducer);
       }
   };
 
-// if (CurrUser) {
-//   reloader = false;
-//   console.log(user);
-// window.location.reload();
-// }
-
   const google_login = useGoogleLogin({
     onSuccess: (tokenResponse) => {
       setUser(tokenResponse);
+      setTimeout(() => {window.location.reload();}, 15000);
     },
     onError: (error) => console.log("Login Failed", error),
   });
